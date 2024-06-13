@@ -1,6 +1,3 @@
-# Frontend Mentor - Expenses chart component solution
-
-This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -19,6 +16,9 @@ This is a solution to the [Expenses chart component challenge on Frontend Mentor
 
 ## Overview
 
+This is a expenses chart which is made using HTML,CSS and Javascript.I utilizes JSON data to change
+dynamically.
+
 ### The challenge
 
 Users should be able to:
@@ -27,11 +27,11 @@ Users should be able to:
 - See the current day’s bar highlighted in a different colour to the other bars
 - View the optimal layout for the content depending on their device’s screen size
 - See hover states for all interactive elements on the page
-- **Bonus**: Use the JSON data file provided to dynamically size the bars on the chart
+- Use the JSON data file provided to dynamically size the bars on the chart
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./images/FireShot%20Pro%20Webpage%20Capture%20003%20-%20'Frontend%20Mentor%20I%20Expenses%20chart%20component'%20-%20127.0.0.1.png)
 
 
 ### Links
@@ -39,7 +39,7 @@ Users should be able to:
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
+
 
 ### Built with
 
@@ -53,42 +53,70 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I have learned about a new javascript library called chart.js in order to create the bar chart
+provided in the design.
 
-To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<section class="header">
+      <div>
+        <h4>My balance</h4>
+        <h2>$921.48</h2>
+      </div>
+     <img
+      src="./images/logo.svg"
+      alt="two circles intersected"
+      />
+</section>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+.content {
+    background-color: hsl(33, 100%, 98%);
+    border-radius: 1em;
+    cursor: pointer;
+    .heading-container {
+        width: 100%;
+        .heading {
+            font-size: 2em;
+            color: hsl(25, 47%, 15%);
+            margin: 1em;
+            font-weight: 700;
+        }
+    }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: info1,
+    datasets: [{
+      data: info2,
+      backgroundColor: bgc,
+      borderWidth: 1,
+      borderRadius: 5
+    }]
+  }
+})
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I will be focusing more on dynamic websites and how can i add animations to them to make them more
+interesting to the users.
 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- (https://www.chartjs.org/docs/latest/configuration/canvas-background.html) - This helped me with chart.js
+
 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Suraj Kumar Santra](https://github.com/Batman-0001)
+- Frontend Mentor - [@Batman-0001](https://www.frontendmentor.io/profile/Batman-0001)
+- Twitter - [@SurajKSantra001](https://www.twitter.com/SurajKSantra001)
 
 
