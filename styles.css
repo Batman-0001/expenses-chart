@@ -172,8 +172,8 @@ main {
 
 @media screen and (max-width: 400px) {
     main {
-        width: 95vw;
-        
+        width: 100vw;
+        left: 0;
     }
 }
 
