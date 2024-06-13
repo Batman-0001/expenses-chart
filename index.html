@@ -8,42 +8,117 @@
   
   <title>Frontend Mentor | Expenses chart component</title>
   <link href="./styles.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <main>
   <section class="header">
-     balance
-     $921.48
+      <div>
+        <h4>My balance</h4>
+        <h2>$921.48</h2>
+      </div>
      <img
       src="./images/logo.svg"
       alt="two circles intersected"
       />
   </section>
 
+  <section class="content">
+    <h1 class="heading">Spending - Last 7 days</h1>
+  
+    <div class="chart-container"><canvas class="chart"></canvas></div>
+     
+    <div class="separation"></div>
 
-  Spending - Last 7 days
+    <div class="content-bottom">
+      <div class="left">
+        <h4>Total this month</h4>
+        <h1>$478.33</h1>
+      </div>
+       
+      <div class="right">
+        <h3>+2.4%</h3>
+        <h4>from last month</h4>
+      </div>
+    </div>
+  </section>
+ </main>
+ <script>
+  fetch('data.json')
+  .then(response => response.json())
+  .then((datasets) => {
+               
+  let info1 = datasets.map((data) => data.day);        
+  let info2 = datasets.map((data) => data.amount);
+  const ctx = document.querySelector('.chart-container canvas');
+  new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: info1,
+    datasets: [{
+      data: info2,
+      backgroundColor: 
+       ['hsl(10, 79%, 65%)',
+        'hsl(10, 79%, 65%)',
+        'hsl(186, 34%, 60%)',
+        'hsl(10, 79%, 65%)',
+        'hsl(10, 79%, 65%)',
+        'hsl(10, 79%, 65%)',
+        'hsl(10, 79%, 65%)'],
+      borderWidth: 1,
+      borderRadius: 5
+    }]
+  },
+  options: {
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-</main>  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      hover: {
+          mode: 'average',
+          animationDuration: 400,
+      },
+      animation: {
+              duration: 1000, 
+              easing: 'easeOutBounce'
+      },
+      plugins: {
+          legend: {
+              display: false
+          },
+          tooltip: {
+              enabled: true,
+              position: 'average'
+          }
+      },
+      scales: {
+          x: {
+              display: true,
+              grid: {
+                  display: false
+              },
+              ticks: {
+                  font: {
+                      weight: 400,
+                      family: 'DM Sans',
+                  }
+              }
+          },
+          y: {
+              display: false,
+              grid: {
+                  display: false
+              }
+          }
+      }
+      
+  }
+});
+})
+</script>  
 </body>
 </html>

@@ -8,14 +8,20 @@
 
 </head>
 <body>
-    <canvas id="myChart"></canvas> 
+    <div><canvas id="myChart"></canvas></div>
+    <p></p> 
     <script>
+        fetch('data.json')
+        .then(response => response.json())
+        .then((data) => {
+                       
+                    
+        
         const ctx = document.getElementById('myChart');
-        const ctxy = document.getElementById('myChart').appendChild("div");
         new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: [`red`, 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
           datasets: [{
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: 
@@ -73,6 +79,7 @@
             
         }
       });
+    })
     </script>
 </body>
 </html>
