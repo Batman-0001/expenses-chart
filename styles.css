@@ -32,11 +32,12 @@ main {
         font-weight: 400;
         margin-top: 1.5em;
         margin-bottom: .5em;
+        font-size: 1em;
        }
        h2 {
         margin-top: 0;
         margin-bottom: .7em;
-        font-size: 2rem;
+        font-size: 2em;
        }
     }
     img {
@@ -49,10 +50,13 @@ main {
     border-radius: 1em;
     cursor: pointer;
     .heading {
-        margin: 1.5em;
+        font-size: 2em;
+        color: hsl(25, 47%, 15%);
+        margin: 1em;
+        font-weight: 700;
     }
     .chart-container {
-        width: 90%;
+        width: 25vw;
         height: 40%;
         margin-left: 1.5em;
     }
@@ -60,7 +64,7 @@ main {
         width: 90%;
         margin-left: 1.5em;
         margin-top: 1.5em;
-        height: 1px;
+        height: 1.5px;
         background-color: hsl(27, 66%, 92%);
     }
     .content-bottom {
@@ -70,10 +74,14 @@ main {
             margin-left: 1.5em;
             h1 {
               font-size: 3em;
+              font-weight: 700;
               margin-top: 0;
+              color: hsl(25, 47%, 15%);
             }
             h4 {
+              color: hsl(28, 10%, 53%);
               font-size: 1em;
+              font-weight: 400;
               margin-top: 1.5em;
               margin-bottom: 0;
             }
@@ -81,12 +89,18 @@ main {
         .right {
             margin-right: 1.5em;
             h3{
+                color: hsl(25, 47%, 15%);
                 font-size: 1em;
                 font-weight: 700;
+                margin-bottom: 0;
+                margin-top: 3.5em;
+                margin-left: 4.5em;  
             }
             h4 {
+               color: hsl(28, 10%, 53%);
                font-size: 1em;
                font-weight: 400;
+               margin-top: 0;
             }   
         }
     }
