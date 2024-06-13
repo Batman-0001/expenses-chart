@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Check the Solution](https://github.com/Batman-0001/expenses-chart)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 
