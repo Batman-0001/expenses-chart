@@ -24,7 +24,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     border-radius: 1em;
     div {
        margin-left: 2em;
@@ -105,5 +104,7 @@ main {
         }
     }
 }
+
+
 
 
