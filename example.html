@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <canvas id="myChart"></canvas> 
+    <script>
+        const ctx = document.getElementById('myChart');
+        const ctxy = document.getElementById('myChart').appendChild("div");
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: 
+            ['red',
+            'blue',
+            'yellow',
+            'green',
+            'purple',
+            'orange'],
+            borderWidth: 1,
+            borderRadius: 10
+          }]
+        },
+        options: {
+            
+            hover: {
+                mode: 'nearest',
+                animationDuration: 400,
+            },
+            animation: {
+                    duration: 1000, 
+                    easing: 'easeInOutQuint'
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: true,
+                    position: 'average'
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            style: 'italic',
+                            weight: 'bold',
+                            family: 'sans-serif',
+
+                        }
+                    }
+                },
+                y: {
+                    display: false,
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+            
+        }
+      });
+    </script>
+</body>
+</html>
