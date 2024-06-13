@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
@@ -31,7 +31,7 @@
   </section>
 
   <section class="content">
-    <h1 class="heading">Spending - Last 7 days</h1>
+    <div class="heading-container"><h1 class="heading">Spending - Last 7 days</h1></div>
   
     <div class="chart-container"><canvas class="chart"></canvas></div>
      
@@ -54,7 +54,17 @@
   fetch('data.json')
   .then(response => response.json())
   .then((datasets) => {
-               
+  let days = ['mon','tue','wed','thu','fri','sat','sun'];
+  let bgc = [];
+  let date = new Date();
+  for (let day of days){
+    if (days.indexOf(day) + 1 === date.getDay()){
+      bgc.push('hsl(186, 34%, 60%)');
+    }
+    else {
+      bgc.push('hsl(10, 79%, 65%)')
+    }
+  }            
   let info1 = datasets.map((data) => data.day);        
   let info2 = datasets.map((data) => data.amount);
   const ctx = document.querySelector('.chart-container canvas');
@@ -64,14 +74,7 @@
     labels: info1,
     datasets: [{
       data: info2,
-      backgroundColor: 
-       ['hsl(10, 79%, 65%)',
-        'hsl(10, 79%, 65%)',
-        'hsl(186, 34%, 60%)',
-        'hsl(10, 79%, 65%)',
-        'hsl(10, 79%, 65%)',
-        'hsl(10, 79%, 65%)',
-        'hsl(10, 79%, 65%)'],
+      backgroundColor: bgc,
       borderWidth: 1,
       borderRadius: 5
     }]
