@@ -54,11 +54,11 @@
   fetch('data.json')
   .then(response => response.json())
   .then((datasets) => {
-  let days = ['mon','tue','wed','thu','fri','sat','sun'];
+  let days = ['sun','mon','tue','wed','thu','fri','sat'];
   let bgc = [];
   let date = new Date();
   for (let day of days){
-    if (days.indexOf(day) + 1 === date.getDay()){
+    if (days.indexOf(day)  === date.getDay()){
       bgc.push('hsl(186, 34%, 60%)');
     }
     else {
