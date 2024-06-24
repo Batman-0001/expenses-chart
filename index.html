@@ -53,9 +53,10 @@
  </main>
  <script>
   
-  document.addEventListener('touchstart', function(event) {
+  document.querySelector("body").addEventListener('touchstart', function(event) {
   event.preventDefault();
   }, { passive: false });
+
 
   fetch('data.json')
   .then(response => response.json())
