@@ -44,6 +44,7 @@
       </div>
        
       <div class="right">
+
         <h3>+2.4%</h3>
         <h4>from last month</h4>
       </div>
@@ -51,6 +52,11 @@
   </section>
  </main>
  <script>
+  
+  document.addEventListener('touchstart', function(event) {
+  event.preventDefault();
+  }, { passive: false });
+
   fetch('data.json')
   .then(response => response.json())
   .then((datasets) => {
